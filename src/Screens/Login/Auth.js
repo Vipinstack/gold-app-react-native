@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   login: {
     position: 'absolute',
-    top: 130,
+    top: 160,
     left: 30,
     fontSize: 30,
     color: "#fff",
