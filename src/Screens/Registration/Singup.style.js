@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     },
     inputFirst: {
         backgroundColor: '#FFF',
-        padding: 6,
-        margin: 15,
+        padding: 3,
+        margin: 10,
         width: '80%',
         borderRadius: 5,
         shadowColor: "#000",
@@ -36,7 +36,10 @@ export const styles = StyleSheet.create({
         shadowRadius: 6.68,
         elevation: 11,
     },
-
+    error:{
+        color:'red',
+        marginHorizontal: 12,
+    },
     btnContainer: {
         position: 'absolute',
         bottom: 280,

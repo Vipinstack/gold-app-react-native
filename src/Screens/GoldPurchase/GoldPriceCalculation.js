@@ -1,13 +1,16 @@
 import { Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import React from 'react';
 import { styles } from './GoldPrice.style';
+import { FontAwesome } from '@expo/vector-icons';
 
 const GoldPriceCalculation = ({navigation}) => {
   return (
     <View style={styles.container}>
         <View style={styles.amount_Container}>
             <Text style={styles.amount_Titile}>Investment Amount</Text>
-            <TextInput placeholder='50,057' keyboardType='number-pad' style={styles.Rup_input}/>
+            <TextInput placeholder='50,057' keyboardType='number-pad' style={styles.Rup_input}
+            
+            />
         </View>
         <View style={styles.priceBtn}>
             <TouchableOpacity>

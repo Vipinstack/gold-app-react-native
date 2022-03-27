@@ -7,13 +7,14 @@ const Slider = ({navigation}) => {
 
     return (
 
-        <View style={{
-            position: 'absolute',
-            top: 130,
-            left: 20,
-        }}>
-            <ScrollView
+        <>
+        <ScrollView
                 horizontal={true}
+                style={{
+                    position: 'absolute',
+                    top: 130,
+                    left: 20,
+                }}
             >
 
                 <View style={[styles.gold_holding]}>
@@ -34,7 +35,7 @@ const Slider = ({navigation}) => {
                 </View>
 
             </ScrollView>
-        </View>
+        </>
     )
 }
 

@@ -1,9 +1,13 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
+import * as Animatable from 'react-native-animatable';
+
 
 const Toastify = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <Animatable.View style={styles.container}
+            animation="bounceInUp"
+        >
             <Text style={styles.title}>Thank You !</Text>
             <View style={styles.successful}>
                 <Image
@@ -14,9 +18,9 @@ const Toastify = ({ navigation }) => {
             </View>
             <View style={styles.bts}>
                 <Text style={styles.btn_continue} onPress={() => navigation.push('home')}>Continue</Text>
-                <Text style={styles.btn_back} onPress={() => navigation.popToTop()}>Back</Text>
+                <Text style={styles.btn_back} onPress={() => navigation.goBack()}>Back</Text>
             </View>
-        </View>
+        </Animatable.View>
     )
 }
 

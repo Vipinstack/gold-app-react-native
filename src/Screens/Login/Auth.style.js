@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#F5F5F5',
         position: 'absolute',
-        top: 240,
+        top: 300,
         width: "100%",
         height: "100%",
         borderTopLeftRadius: 40,
@@ -12,20 +12,22 @@ export const styles = StyleSheet.create({
     },
     inputFileds: {
         position: 'absolute',
-        width: "100%",
-        top: 30,
-        left: 12,
+        width: "80%",
+        top: 70,
+        marginHorizontal:30,
         zIndex: 0,
     },
-    Label: {
-        marginHorizontal: 18,
-        fontFamily: 'BreeSerif'
+   
+    error:{
+        color:'red',
+        marginHorizontal: 12,
     },
-    inputFirst: {
+
+    inputFirst:{
         backgroundColor: '#FFF',
         padding: 8,
-        margin: 17,
-        width: '80%',
+        marginVertical:5,
+        width: '100%',
         borderRadius: 5,
         shadowColor: "#000",
         shadowOffset: {
@@ -39,7 +41,7 @@ export const styles = StyleSheet.create({
     },
     btnContainer: {
         position: 'absolute',
-        top: 260,
+        top: 300,
         marginHorizontal: 30,
         width: "80%",
 
@@ -70,15 +72,15 @@ export const styles = StyleSheet.create({
     },
     forgetPass: {
         position: 'absolute',
-        top: 190,
-        left: 18,
+        top: 180,
+        left:5,
         color: 'blue',
         textDecorationLine: 'underline',
         fontFamily: 'BreeSerif'
     },
     IconEye: {
         position: 'absolute',
-        top: 163,
+        top: 185,
         right: 42,
         backgroundColor: '#009387',
         width: '11%',

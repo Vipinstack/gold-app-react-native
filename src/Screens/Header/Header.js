@@ -1,8 +1,14 @@
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native'
 import { useFonts } from 'expo-font';
 import { FontAwesome } from '@expo/vector-icons';
+import {useRoute} from '@react-navigation/native'
+
 
 const Header = () => {
+  const route = useRoute()
+    console.log(route.params.name);
+ 
   const [loaded] = useFonts({
     BreeSerif: require('../../../assets/fonts/BreeSerif.ttf')
   })
@@ -13,7 +19,7 @@ const Header = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.userName}>Hello, User</Text>
+      <Text style={styles.userName}>Hello, {route.params.name}</Text>
       <FontAwesome name="navicon" size={35} color="black" style={styles.icon} />
     </View>
   )
