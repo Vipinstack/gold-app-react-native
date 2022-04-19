@@ -1,63 +1,127 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
-import 'react-native-gesture-handler';
-import { useFonts } from 'expo-font';
-import { styles } from './GoldPrice.style';
-
+import { Text, View, ScrollView, ToastAndroid } from "react-native";
+import React, { useEffect, useState } from "react";
+import "react-native-gesture-handler";
+import { useFonts } from "expo-font";
+import { styles } from "./GoldPrice.style";
+import { url } from "../../Api/api";
+import { useIsFocused } from "@react-navigation/native";
 
 const GoldPrice = ({ navigation }) => {
+  const [todayprice, setTodayPrice] = useState([]);
+  const [sellers, setSellers] = useState([]);
+  // const isFocused = useIsFocused(); //navigation by
+
+
+  console.log(todayprice)
+
+  useEffect(() => {
+    SellersApi();
+    GoldPriceApi();
+  }, []);
+
+  const GoldPriceApi = async () => {
+    await fetch(`${url}/commodities`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setTodayPrice(data.data);
+      });
+  };
+
+  const SellersApi = async () => {
+    await fetch(`${url}/get_seller`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((sellersData) => {
+        setSellers(sellersData.data);
+
+      });
+  };
+
+
 
   const [loaded] = useFonts({
-    BreeSerif: require('../../../assets/fonts/BreeSerif.ttf')
-  })
+    BreeSerif: require("../../../assets/fonts/BreeSerif.ttf"),
+  });
 
   if (!loaded) {
-    return <Text>Loading..</Text>
+    return <Text>Loading..</Text>;
   }
+
+  const handlerToast = (e) => {
+    ToastAndroid.showWithGravityAndOffset(
+      `Your Gold Purchase sellers ${e}`,
+      ToastAndroid.LONG,
+      ToastAndroid.BOTTOM,
+      25,
+      50
+    );
+  };
 
   return (
     <>
-    <View style={styles.container}>
-      <Text style={styles.price_title}>Gold Price</Text>
-      <View style={styles.today_price}>
-        <Text style={styles.today_price_name}>Today</Text>
-        <Text style={styles.today_price_gram}>57,075/Gram</Text>
-      </View>
-      <View style={styles.yesterday_price}>
-        <Text style={styles.yesterday_price_name}>Yesterday</Text>
-        <Text style={styles.yesterday_price_gram}>57,075/Gram</Text>
-      </View>
-      <View style={styles.Latest_Date}>
-        <Text style={styles.Latest_Date_name}>{new Date().toLocaleDateString()}</Text>
-        <Text style={styles.Latest_Date_gram}>57,075/Gram</Text>
+      <View style={styles.wapper}>
+        <Text style={styles.gold_price}>Gold Price</Text>
+        {todayprice.map((e, i) => {
+           return (
+            <View style={styles.container} key={i}>
+              <Text style={styles.ApiFetch_date}>{e.date}</Text>
+              <Text style={styles.ApiFetch_price}>
+                {e.price}/{e.unit}
+              </Text>
+            </View>
+           ); 
+         })} 
       </View>
 
-      {/* <View style={styles.ScrollViewbtn}> */}
-        {/* <ScrollView
-          horizontal={true}
-        > */}
-          {/* <View style={[styles.gold_holding]}> */}
-            {/* <Text style={styles.today_api_price} onPress={() => navigation.push('Gold Purchase')}>Shri Ram Jwellers</Text> */}
-          {/* </View> */}
-        {/* </ScrollView> */}
-      {/* </View> */}
 
-    </View>
-      <ScrollView style={styles.ScrollViewbtn}
-        horizontal={true}
+      <View style={styles.ScrollViewbtn}>
+        <ScrollView horizontal={true}>
+          {sellers.map((e, i) => {
+            return (
+              <Text
+                style={styles.btns}
+                key={i}
+                onPress={() =>
+                  navigation.navigate(
+                    "Gold Purchase",
+                    {
+                      price: todayprice,
+                      name: e.business_name,
+                      sellers_id: e.id,
+                    },
+                    handlerToast(e.business_name)
+                  )
+                }
+              >
+                {e.business_name}
+              </Text>
+            );
+          })}
+        </ScrollView>
+      </View>
+
+      <Text
+        onPress={() => navigation.push("edit_profile")}
+        style={{
+          marginBottom: 140,
+          marginHorizontal: 30,
+        }}
       >
-        <Text style={styles.btns} onPress={()=>{navigation.push('Gold Purchase')}}>Shri Ram Jwellers</Text>
-        <Text style={styles.btns}>Shri Ram Jwellers</Text>
-        <Text style={styles.btns}>Shri Ram Jwellers</Text>
-        <Text style={styles.btns}>Shri Ram Jwellers</Text>
-        <Text style={styles.btns}>Shri Ram Jwellers</Text>
-        <Text style={styles.btns}>Shri Ram Jwellers</Text>
-      </ScrollView>
-      </>
+        EditProfile
+      </Text>
+    </>
+  );
+};
 
-  )
-}
-
-export default GoldPrice
-
-
+export default GoldPrice;

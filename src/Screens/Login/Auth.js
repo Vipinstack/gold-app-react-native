@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingViewBase, ScrollView, StyleSheet, Text, View } from 'react-native'
 import NextAuth from './NextAuth'
 import { useFonts } from 'expo-font'
 

@@ -5,16 +5,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import StackNavScreen from './src/Navigation/StackNav/StackNavScreen';
 
 import { LogBox } from 'react-native';
+// import MyDrawer from './src/Navigation/DrawerNav/MyDrawer';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
 ]);
 
 export default function App() {
+  
   return (
       <Screen>
         <NavigationContainer>
           <StackNavScreen />
+          {/* <MyDrawer /> */}
         </NavigationContainer>
       </Screen>
   );

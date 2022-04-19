@@ -4,11 +4,11 @@
     "slug": "gold-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Rup.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Rup.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f0a500"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package":"thegoldapp.goldapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

@@ -3,24 +3,19 @@ import { StyleSheet } from "react-native";
 export 
 const styles = StyleSheet.create({
     container:{
-        position:'absolute',
-        top:340,
+        marginTop:140,
         width:'100%',
-        height:200,
+        height:400,
     },
     amount_Container:{
-        position:"absolute",
+        flex:1
     },
     amount_Titile:{
         color:'gray',
-        position:"absolute",
-        left:120
-
+        textAlign:'center'
     },
     Rup_input:{
-        position:'absolute',
-        top:30,
-        left:100,
+        marginHorizontal:95,
         width:180,
         height:40,
         textAlign:'center',
@@ -29,11 +24,10 @@ const styles = StyleSheet.create({
 
     },
     priceBtn:{
-        position: 'absolute',
-        top:80,
-        left:60,
-        flex:1,
+        paddingTop:10,
         flexDirection:'row',
+        alignContent:'center',
+        justifyContent: 'center',
         
     },
     price:{
@@ -54,9 +48,8 @@ const styles = StyleSheet.create({
    
     },
     gram_input:{
-        position:'absolute',
-        top:140,
-        left:100,
+        marginTop:15,
+        marginHorizontal:95,
         width:180,
         height:40,
         textAlign:'center',
@@ -64,12 +57,9 @@ const styles = StyleSheet.create({
         fontSize:25,
     },
     img_container:{
-        position: 'absolute',
-        top:250,
-        flex:1,
+        paddingVertical:80,
         flexDirection:'row',
-        opacity:.5,
-        
+        opacity:.5,        
     },
     imgs:{
         width:60,
@@ -78,10 +68,10 @@ const styles = StyleSheet.create({
     },
     btn_container:{
         position:'absolute',
-        top:328,
+        top:345,
         width:'100%',
-        height:120,
-        backgroundColor:'green',
+        height:40,
+        backgroundColor:'#08D95B',
        
     },
     btn:{

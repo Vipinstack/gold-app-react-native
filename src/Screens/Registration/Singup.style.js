@@ -4,52 +4,36 @@ export const styles = StyleSheet.create({
 
     container: {
         backgroundColor: '#F5F5F5',
-        position: 'absolute',
-        top: 180,
+        marginVertical: 240,
         width: "100%",
         height: "100%",
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
     },
     inputFileds: {
-        position: 'absolute',
         width: "100%",
-        top: 15,
-        left: 12,
-        zIndex: 0,
+        marginHorizontal:15,
+        marginTop:12,
     },
     Label: {
-        marginHorizontal: 15,
+        marginHorizontal: 18,
     },
     inputFirst: {
         backgroundColor: '#FFF',
-        padding: 3,
+        padding: 5,
         margin: 10,
+        marginHorizontal: 18,
         width: '80%',
         borderRadius: 5,
+        borderBottomColor:'gray',
+        borderBottomWidth:1,
         shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 0.36,
-        shadowRadius: 6.68,
-        elevation: 11,
-    },
-    error:{
-        color:'red',
-        marginHorizontal: 12,
     },
     btnContainer: {
-        position: 'absolute',
-        bottom: 280,
-        marginHorizontal: 30,
+        marginVertical:20,
+        marginHorizontal: 34,
         width: "80%",
-
-    },
-    btn: {
-        color: "red"
-    },
+    },   
     btnText: {
         width: '100%',
         backgroundColor: '#009387',
@@ -66,37 +50,24 @@ export const styles = StyleSheet.create({
         fontFamily: 'BreeSerif'
     },
     signup: {
-        position: 'absolute',
-        top: 16,
+        marginVertical:12,
         textDecorationLine: 'underline',
         fontFamily: 'BreeSerif'
     },
 
-    IconEye: {
-        position: 'absolute',
-        top: 169,
-        right: 44,
-        backgroundColor: '#009387',
-        width: '10%',
-        height: 40.9,
-        borderRadius: 5,
-        borderBottomLeftRadius: 0,
-        borderTopLeftRadius: 0,
-        zIndex: 1
-    },
     Icon: {
         position: 'absolute',
-        top: 10,
-        right: 8,
+        top:154,
+        right: 50,
     },
     picker: {
-        backgroundColor: '#FFF',
+        backgroundColor: 'red',
         marginHorizontal: 15,
         marginVertical: 6,
         height: 40,
         width: '80%',
         borderRadius: 5,
-        shadowColor: "#000",
+        shadowColor: "red",
         shadowOffset: {
             width: 0,
             height: 5,
@@ -104,5 +75,50 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
         elevation: 11,
-    }
+    },
+    dropdown: {
+        marginHorizontal: 16,
+        marginRight:50,
+        height: 50,
+        borderBottomColor: 'gray',
+        borderBottomWidth: 1,
+      },
+      icon: {
+        marginRight: 5,
+      },
+      placeholderStyle: {
+        fontSize: 16,
+      },
+      selectedTextStyle: {
+        fontSize: 16,
+      },
+      iconStyle: {
+        width: 20,
+        height: 20,
+      },
+      inputSearchStyle: {
+        height: 40,
+        fontSize: 16,
+      },
+      item: {
+        paddingVertical: 15,
+        paddingHorizontal: 14,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    textItem: {
+        flex: 1,
+        fontSize: 16,
+    },
+    shadow: {
+        shadowColor: '#000',
+        shadowOffset: {
+        width: 0,
+        height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+        elevation: 12,
+    },
 })

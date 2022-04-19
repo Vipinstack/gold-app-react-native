@@ -16,7 +16,7 @@ const Singup = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.login}>Registration!</Text>
+      <Text style={styles.Register}>Registration!</Text>
       <NextSingup  navigation={navigation}/>
     </View>
   )
@@ -26,13 +26,12 @@ export default Singup
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         backgroundColor:"#009387",
         position:'relative',
     },
-    login:{
+    Register:{
         position:'absolute',
-        top:80,
+        top:120,
         left:30,
         fontSize:30,
         color:"#fff",

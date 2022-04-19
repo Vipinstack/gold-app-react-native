@@ -4,19 +4,16 @@ export const styles = StyleSheet.create({
 
     container: {
         backgroundColor: '#009387',
-        position: 'absolute',
-        top: 370,
+        borderTopLeftRadius:30,
+        borderTopRightRadius:30,
+        flex:1,
         width: "100%",
-        height: "100%",
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
     },
     inputFileds: {
-        position: 'absolute',
         width: "100%",
-        top: 90,
-        left: 12,
-        zIndex: 0,
+        marginHorizontal:17,
+        marginVertical:20
+
     },
     Label: {
         marginHorizontal: 18,
@@ -39,8 +36,7 @@ export const styles = StyleSheet.create({
         elevation: 11,
     },
     btnContainer: {
-        position: 'absolute',
-        top: 220,
+        marginVertical:18,
         marginHorizontal: 30,
         width: "80%",
 
